@@ -31,19 +31,22 @@ const ProfilePage = () => {
     return <div>Loading...</div>; // Show a loading state
   }
 
-  return (
-    <div>
-      <h1>Profile</h1>
-      {user ? (
-        <div>
-          <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
-        </div>
-      ) : (
-        <p>No user data found.</p>
-      )}
+  return isLoading ? (
+    <div className="text-center py-10">Loading...</div>
+  ) : (
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+        <h1 className="text-2xl font-bold text-center text-blue-600 mb-4">Profile</h1>
+        {user ? (
+          <div className="space-y-2 text-lg">
+            <p><strong>Name:</strong> {user.name || "Not Available"}</p>
+            <p><strong>Email:</strong> {user.email || "Not Available"}</p>
+          </div>
+        ) : (
+          <p>No user data found.</p>
+        )}
+      </div>
     </div>
   );
 };
-
 export default ProfilePage;

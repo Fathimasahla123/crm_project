@@ -4,8 +4,8 @@ import HomePage from "./pages/Home";
 import LoginPage from "./pages/Login";
 import SignupPage from "./pages/Signup";
 import ProfilePage from "./pages/Profile";
-import LogoutPage from "./pages/Logout";
 import PrivateRoute from "./component/PrivateRoute";
+import './styles/styles.css';
 
 const router = createBrowserRouter([
   {
@@ -45,15 +45,6 @@ const router = createBrowserRouter([
           <Navbar />
           <ProfilePage />
           </PrivateRoute>
-      </>
-    ),
-  },
-  {
-    path: "/logout",
-    element: (
-      <>
-        <Navbar />
-        <LogoutPage />
       </>
     ),
   },
