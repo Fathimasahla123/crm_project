@@ -9,7 +9,6 @@ const errorHandler = require("./src/error/errorHandling");
 const cookieParser = require("cookie-parser");
 const cors = require ("cors");
 
-const PORT = 5001;
 
 app.use(express.json());
 app.use(cookieParser());
