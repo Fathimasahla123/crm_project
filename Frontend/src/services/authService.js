@@ -12,7 +12,7 @@ export const loginUser = async (credentials) => {
     });
     const token = response?.data?.token;
     if (token) {
-      Cookies.set("token");
+     Cookies.set("token", token);
       return { success: true, user: response.data.user };
     } else {
       return { success: false, message: "Token missing in response" };
